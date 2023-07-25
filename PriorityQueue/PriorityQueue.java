@@ -20,13 +20,13 @@ class PriorityQueue {
             queArray[nItems++] = item; // Insert into cell 0
         } else {                       // Else queue is not empty
             for (j = nItems - 1; j >= 0; j--) { // Reverse iteration
-                if (item > queArray[j]) {
-                    queArray[j + 1] = queArray[j];
-                } else {
-                    break;
+                if (item > queArray[j]) {       // If the new element is greater,
+                    queArray[j + 1] = queArray[j]; // Move top
+                } else {    // if less
+                    break;  // Shift stops
                 }
             }
-            queArray[j + 1] = item;
+            queArray[j + 1] = item; // Insert element
             nItems++;
         }
     }
